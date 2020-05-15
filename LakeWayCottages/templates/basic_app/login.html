@@ -1,0 +1,52 @@
+{% extends 'basic_app/base.html'%}
+{%block body_block%}
+{%load static%}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+	<body class=" container" style="background:#76922b">
+		<div class="jumbotron bg-dark d-flex justify-content-around h-100 ">
+
+				<div class="d-flex justify-content-center form_container">
+					<form action="{%url 'basic_app:login'%} " method="POST" class="text-white">
+
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user">Username</i></span>
+							</div>
+							<input type="text" name="username"  class="form-control input_user " value="" placeholder="username">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key">Password</i></span>
+							</div>
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="customControlInline">
+								<label class="custom-control-label" for="customControlInline">Remember me</label>
+							</div>
+							<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						<a href="{%url 'reset_password'%}" class="text-white">Forgot your password?</a>
+					</div>
+				</div>
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	<input type="submit"   class="btn btn-primary" value="Login">
+				   </div>
+				    {%csrf_token%}
+					</form>
+				</div>
+
+
+			</div>
+		</body>
+
+
+{%endblock%}

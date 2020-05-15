@@ -1,0 +1,23 @@
+{%extends 'basic_app/base.html'%}
+{%block body_block%}
+{%load static%}
+<div style="background-image: url({% static 'wood.jpg' %});">
+        <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form method="POST" class="d-flex justify-content-center" >
+
+        {%csrf_token%}
+    <div class="jumbotron " >
+    <h1 class="d-flex justify-content-center">Delete {{feature.desc}} ??</h1>
+    <input type="submit" class="btn btn-danger" value="Delete">
+    <p><a class="btn btn-warning" href="{%url 'basic_app:index'%}">Cancel</a></p>
+    </div>
+</form>
+    </div>
+{%endblock%}
